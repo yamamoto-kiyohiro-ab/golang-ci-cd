@@ -19,5 +19,5 @@ func getPuyo() string {
 }
 
 func getPiyo() string {
-	return "puyo"
+	return "piyo"
 }
