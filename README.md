@@ -7,7 +7,11 @@
 
 Golang で CI / CD するサンプル
 
-Github Actions と CodeCov を利用
+Github Actions, CodeCov, Github Container Registry などを利用し、以下を実現しています
+
+1. PR 作成時に自動テスト & カバレッジ可視化
+
+2. master マージ時に image を作成し GCR に登録
 
 ## Test
 
@@ -33,4 +37,11 @@ go build -o ./build/dummyapp ./cmd/dummyapp
 ```
 docker build -t dummyapp .
 docker run dummyapp
+```
+
+## Run (registered image)
+
+```
+docker pull ghcr.io/yamamoto-kiyohiro-ab/golang-ci-cd:latest
+docker run golang-ci-cd
 ```
