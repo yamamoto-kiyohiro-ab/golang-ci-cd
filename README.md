@@ -42,6 +42,6 @@ docker run dummyapp
 ## Run (registered image)
 
 ```
-docker pull ghcr.io/yamamoto-kiyohiro-ab/golang-ci-cd:latest
-docker run golang-ci-cd
+docker pull ghcr.io/yamamoto-kiyohiro-ab/golang-ci-cd
+docker run ghcr.io/yamamoto-kiyohiro-ab/golang-ci-cd
 ```
