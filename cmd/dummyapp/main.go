@@ -17,3 +17,7 @@ func getFuga() string {
 func getPuyo() string {
 	return "puyo"
 }
+
+func getPiyo() string {
+	return "piyo"
+}
