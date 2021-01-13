@@ -1,0 +1,10 @@
+# testing
+cover.out
+
+# build
+/build
+
+# misc
+.DS_Store
+.idea
+
