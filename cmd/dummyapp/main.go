@@ -3,7 +3,7 @@ package main
 import "fmt"
 
 func main() {
-	fmt.Println(getHoge() + getFuga() + getPuyo())
+	fmt.Println(getHoge() + getFuga() + getPuyo() + ": v2")
 }
 
 func getHoge() string {
