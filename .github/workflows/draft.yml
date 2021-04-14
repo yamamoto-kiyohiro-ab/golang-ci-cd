@@ -8,5 +8,5 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - name: test
+      - name: draft
         run: echo ${{ github.event.pull_request.draft }}
