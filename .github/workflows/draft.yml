@@ -8,11 +8,5 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - name: test1
-        run: echo ${{ github }}
-      - name: test2
-        run: echo ${{ github.event }}
-      - name: test3
-        run: echo ${{ github.event.pull_request }}
-      - name: test4
+      - name: test
         run: echo ${{ github.event.pull_request.draft }}
