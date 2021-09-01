@@ -1,0 +1,4 @@
+mode: atomic
+github.com/dummy/golang-ci-cd/cmd/dummyapp/foo/a.go:3.26,4.7 1 1
+github.com/dummy/golang-ci-cd/cmd/dummyapp/foo/a.go:7.2,7.12 1 0
+github.com/dummy/golang-ci-cd/cmd/dummyapp/foo/a.go:4.7,6.3 1 1

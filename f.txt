@@ -1,0 +1,4 @@
+.github/workflows/ci.yml
+cmd/dummyapp/foo/a.go
+cmd/dummyapp/foo/a_test.go
+go.mod
