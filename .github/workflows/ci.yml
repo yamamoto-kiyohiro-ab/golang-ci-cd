@@ -18,12 +18,28 @@ jobs:
       # checkout
       - name: checkout
         uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
       # test
       - name: test
-        run: go test ./... -v -coverprofile=cover.out
+        run: go test -v -coverprofile=cover.out -covermode=atomic ./...
       # codecov
-      - name: codecov
-        uses: codecov/codecov-action@v1
+      # - name: codecov
+      #   uses: codecov/codecov-action@v1
+      #   with:
+      #     token: ${{secrets.CODECOV_TOKEN}}
+      #     file: cover.out
+      # self-coverage
+      - uses: reviewdog/action-setup@v1
         with:
-          token: ${{secrets.CODECOV_TOKEN}}
-          file: cover.out
+          reviewdog_version: latest
+      - name: coverage
+        env:
+          REVIEWDOG_GITHUB_API_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          go install golang.org/x/lint/golint
+          golint ./... | reviewdog -efm="%f:%l:%c: %m" -diff="git diff FETCH_HEAD"
+          git diff origin/feature/test-base...origin/feature/test-diff --name-only > f.txt
+          head -n 1 cover.out > cover2.out
+          grep -f f.txt cover.out >> cover2.out
+          cat cover2.out
