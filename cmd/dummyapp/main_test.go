@@ -20,3 +20,9 @@ func TestGetPuyo(t *testing.T) {
         t.Errorf("failed...")
     }
 }
+
+func TestGetPiyo(t *testing.T) {
+    if getPiyo() != "piyo" {
+        t.Errorf("failed...")
+    }
+}
